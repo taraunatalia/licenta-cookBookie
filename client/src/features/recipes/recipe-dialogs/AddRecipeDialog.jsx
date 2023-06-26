@@ -56,7 +56,6 @@ export default function AddRecipeDialog({ cancel, opened, onRecipeAdded}){
             data.set(key, value);
         });
         data.set('imageCover', image);
-        console.log('data', data);
         const res = await fetch ('http://localhost:8080/recipe', {
             method: 'POST',
             headers: {

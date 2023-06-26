@@ -22,7 +22,7 @@ export default function RecipeList ({
 					key={recipe._id}
 				>
 					<div className={styles['svg-container']}>
-					<img className={styles['svg-container']} src={`data:${recipe.mimetype};base64,${recipe.imageCover}`} alt="Recipe Cover" />
+						<img className={styles['recipe-image']} src={`http://localhost:8080/uploads/${recipe.imageCover}`} alt="Recipe Cover" />
 					</div>
 					<div className={styles['recipe-details-container']}>
 						<p className={`${styles['recipe-title']} ${styles['small-title']}`}>

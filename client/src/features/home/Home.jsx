@@ -24,6 +24,7 @@ export default function Home (){
             },
         }, false);
         setIsAdmin(res.status === 200);
+        localStorage.setItem('isAdmin', res.status === 200);
     }
     loadData();
     }, []);

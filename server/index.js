@@ -14,6 +14,7 @@ app.use(cors({
     origin: '*'
 }));
 app.use(express.json());
+app.use('/uploads', express.static('uploads'))
 
 db.mongoose.connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
     useNewUrlParser: true,

@@ -14,12 +14,7 @@ exports.getAllPublicRecipes = async (req, res) => {
 			res.status(204).send({ message: 'There are no public recipes here!' });
 			return;
 		}
-		console.log('this');
-		res.status(200).send({ recipes: recipes.map(recipe => ({
-			...recipe._doc,
-			mimetype: recipe.imageCover.contentType,
-			imageCover: Buffer.from(recipe.imageCover.data).toString('base64'),
-		})) });
+		res.status(200).send({ recipes });
 	} catch (err) {
 		res.status(500).send({ message: err });
 	}
@@ -33,11 +28,7 @@ exports.getAllUserRecipes = async (req, res) => {
 			return;
 		}
 		
-		res.status(200).send({ recipes: recipes.map(recipe => ({
-			...recipe._doc,
-			mimetype: recipe.imageCover.contentType,
-			imageCover: Buffer.from(recipe.imageCover.data).toString('base64'),
-		})) });
+		res.status(200).send({ recipes });
 	} catch (err) {
 		res.status(500).send({ message: err });
 	}
@@ -47,12 +38,7 @@ exports.getRecipe = async (req, res) => {
 	const { id } = req.params;
 	try {
 		const recipe = await Recipe.findById(id).exec();
-		//res.send({ recipe });
-		res.status(200).send({ recipe: {
-			...recipe._doc,
-			mimetype: recipe.imageCover.contentType,
-			imageCover: Buffer.from(recipe.imageCover.data).toString('base64'),
-		} });
+		res.send({ recipe });
 	} catch (err) {
 		res.status(500).send({ message: err });
 	}
@@ -70,10 +56,7 @@ exports.createRecipe = async (req, res) => {
             cookingTime: req.body.cookingTime?.trim(),
             difficulty: req.body.difficulty?.trim(),
             description: req.body.description?.trim(),
-            imageCover: {
-				data: req.file.buffer,
-				contentType: req.file.mimetype
-			  },
+            imageCover: req.file.filename,
             private: req.body.private,
 			user: req.userId
                   
@@ -148,8 +131,6 @@ exports.updateRecipe = async (req, res) => {
 	}
 };
 
-
-
 exports.deleteMyRecipe = async (req, res) => {
 	try {
 		const recipe = await Recipe.findById(req.body.recipeId).populate('user');
@@ -175,11 +156,7 @@ exports.deleteMyRecipe = async (req, res) => {
 exports.getAllRecipes = async (req, res) => {
 	try {
 		const recipes = await Recipe.find().populate('user', 'name').exec();
-		res.status(200).send({ recipes: recipes.map(recipe => ({
-			...recipe._doc,
-			mimetype: recipe.imageCover.contentType,
-			imageCover: Buffer.from(recipe.imageCover.data).toString('base64'),
-		})) });
+		res.status(200).send({ recipes });
 	} catch (err) {
 		res.status(500).send({ message: err });
 	}

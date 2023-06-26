@@ -49,7 +49,7 @@ export default function UserProfile() {
 	return (
 		<PageContainer
 			loggedIn
-			navLinks={[isAdmin ? 'users' : 'UserRecipes']}
+			navLinks={[isAdmin ? {link: 'users', name: 'Utilizatori'} : {link: 'userRecipes', name: 'Retele mele'}]}
 		>
 			<div className="list-item-container">
 				<h2 className={styles.title}>Editează profil</h2>

@@ -49,8 +49,8 @@ const Recipe = mongoose.model(
             required: true,
         },
         imageCover: {
-            data: Buffer,
-            contentType: String
+            type: String,
+            required: true
         },
         private:{
             type: Boolean,

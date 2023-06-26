@@ -58,7 +58,7 @@ export default function ManageUsers() {
 	return (
 		<PageContainer
 			loggedIn
-			navLinks={['users']}
+			navLinks={[{link: 'users', name: 'Utilizatori'}]}
 		>
 			<div className="category-container">
 				<div className="title-row">

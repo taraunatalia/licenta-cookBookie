@@ -1,6 +1,14 @@
 const multer = require('multer');
-const storage = multer.memoryStorage();
- 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+        let extArray = file.mimetype.split("/");
+        let extension = extArray[extArray.length - 1];
+        cb(null, file.fieldname + '-' + Date.now()+ '.' + extension);
+    }
+  })
 const upload = multer({ storage: storage });
 
 const controller = require('../controllers/recipe.controller');
@@ -17,7 +25,7 @@ module.exports=(app)=>{
     app.get('/recipes/user', controller.getAllUserRecipes);
 
     app.get('/recipe/:id', controller.getRecipe);
-	app.post('/recipe',upload.single('imageCover'), [ValidateNewRecipe], controller.createRecipe);
+	app.post('/recipe', upload.single('imageCover'), [ValidateNewRecipe], controller.createRecipe);
     app.patch('/recipe', [ValidateNewRecipe], controller.updateRecipe);
     app.delete('/recipe/user', controller.deleteMyRecipe);
 
