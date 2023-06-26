@@ -8,7 +8,6 @@ import styles from './auth.module.scss';
 export default function Register(){
     const navigate = useNavigate();
 	const [fetching, setFetching] = useState(false);
-	//const customFetch = useFetch();
     const [validForm, setValidForm] = useState(false);
     const [user, setUser] = useState({});
 	const store = useContext(Store);

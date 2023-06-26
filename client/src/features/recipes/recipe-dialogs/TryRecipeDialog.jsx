@@ -1,5 +1,4 @@
 import Dialog from '../../common/dialog/Dialog';
-//import { capitalize } from '../../common/utils';
 
 export default function TryRecipeDialog({
 	recipe, confirm, cancel, 

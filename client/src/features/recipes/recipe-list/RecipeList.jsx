@@ -80,15 +80,6 @@ export default function RecipeList ({
 								>
 									{isAdmin ? 'Detalii' : 'Detalii'}
 								</NavLink>
-								{/* {isAdmin && (
-									<button
-										className="link-btn"
-										onClick={() => tryRecipeAction(recipe)}
-										type="button"
-									>
-										Vezi rețetele favorite
-									</button>
-								)} */}
 							</div>
 						</div>
 					</div>

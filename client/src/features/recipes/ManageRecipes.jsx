@@ -109,13 +109,6 @@ export default function ManageRecipes(){
 				   </div>
 	
 					</div>
-					{/* <button
-						className={'primary-btn'}
-						onClick={getRecipes}
-						type="button"
-					>
-						Caută
-					</button> */}
 				</div>
 			</div>
 			<RecipeList

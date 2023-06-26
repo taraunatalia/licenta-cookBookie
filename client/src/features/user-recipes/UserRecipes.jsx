@@ -2,7 +2,6 @@ import {
 	useContext,
 	useMemo, useEffect, useCallback, useState,
 } from 'react';
-//import { NavLink } from 'react-router-dom';
 import Store from '../../store';
 import AddRecipeDialog from '../recipes/recipe-dialogs/AddRecipeDialog';
 import Dialog from '../common/dialog/Dialog';
@@ -133,49 +132,6 @@ export default function UserRecipes() {
 		setRecipeToEdit(null);
 		getUserRecipes();
 	}
-
-	// useEffect(() => {
-	// 	getUserRecipes();
-	// }, []);
-
-    //
-    
-
-	// const renderUserRecipe = useCallback((res, cancel) => (
-	// 	<div
-	// 		className={`list-item-container ${styles['item-container']}`}
-	// 		key={res._id}
-	// 	>
-	// 		<div>
-	// 			<span className={res.recipe ? styles.link : styles.canceled}>
-	// 				<NavLink
-	// 					to={`/recipe/${res.recipe?._id}`}
-	// 				>
-	// 					{res.recipe ? `${capitalize(res.recipe.category)}
-	// 					${capitalize(res.recipe.name)}
-	// 					in ${capitalize(res.recipe.servings)}` : 'Deleted recipe'}
-	// 				</NavLink>
-	// 			</span>
-	// 		</div>
-	// 		<div>
-	// 			{cancel ? (
-	// 				<button
-	// 					className="danger-btn"
-	// 					onClick={() => setUserRecipeToCancel(res)}
-	// 					type="button"
-	// 				>
-	// 					Cancel
-	// 				</button>
-	// 			) : (
-	// 				<span className={styles.canceled}>
-	// 					{res.status !== 'active'
-	// 						? capitalize(res.status) : ''}
-	// 				</span>
-	// 			)}
-	// 		</div>
-	// 	</div>
-	// ));
-
     
     const addButton = (
         <button
@@ -221,13 +177,6 @@ export default function UserRecipes() {
 		</select>
 		</div>
 	    </div>
-		{/* <button
-			className={'primary-btn'}
-			onClick={getUserRecipes}
-			type="button"
-		>
-			Caută
-		</button> */}
 		</div>
 		</div>
         <UserRecipesList
