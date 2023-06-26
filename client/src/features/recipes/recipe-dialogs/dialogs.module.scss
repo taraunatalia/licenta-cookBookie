@@ -1,0 +1,21 @@
+.form-container {
+    width: 500px;
+    max-width: 100%;
+}
+
+.available {
+    margin-top: 14px;
+
+    label {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+
+        &>input {
+            margin-right: 10px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+

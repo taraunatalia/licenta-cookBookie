@@ -1,0 +1,52 @@
+@import '../../../style/variables';
+
+.toasts-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.toast {
+    margin: 10px 0;
+    padding: 10px 25px;
+    border-radius: 4px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: $text-primary;
+
+    &.success {
+        background-color: $success;
+    }
+
+    &.error {
+        background-color: $danger;
+    }
+}
+
+.close-button {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 18px;
+    color: $text-primary;
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .toasts-container {
+        width: calc(100% - 20px);
+        left: 10px;
+        right: 10px;
+    }
+
+    .toast {
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,82 @@
+@import '../../style/variables';
+
+// Recipe
+.filter-header {
+    .heading {
+        font-weight: normal;
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+}
+
+.date-row {
+    display: flex;
+    justify-content: center;
+}
+
+.date-range-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-right: 30px;
+
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .date-row {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .date-range-container {
+        margin: 10px 0;
+    }
+}
+.category-row {
+    display: flex;
+    justify-content: center;
+}
+
+.category-range-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-right: 30px;
+
+}
+
+.category {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
+
+  }
+  .rating {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
+
+  }
+  .rating-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-label {
+  margin-right: 10px;
+}
+.category-label {
+    margin-right: 10px;
+  }
+
+.primary-btn{
+    position: relative;
+    margin-left: 1000px; 
+    
+}

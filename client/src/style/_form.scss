@@ -1,0 +1,64 @@
+.form-group {
+    margin-top: 20px;
+
+    label {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .error-message {
+        color: $danger;
+        font-size: 14px;
+        margin: 4px;
+        height: 14px;
+    }
+
+    .spacer {
+        height: 14px;
+    }
+}
+
+.form-control {
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border: 1px solid $light-gray;
+    border-radius: 20px;
+
+    &:active, &:focus {
+        outline: none;
+        border-color: $primary;
+    }
+}
+
+.form-actions {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .primary-action {
+        order: 2;
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .secondary-action {
+        order: 1;
+        margin: 0;
+        font-size: 16px;
+
+        a {
+            color: $secondary;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+::placeholder {
+    color: rgba(0,0,0, .3);
+}

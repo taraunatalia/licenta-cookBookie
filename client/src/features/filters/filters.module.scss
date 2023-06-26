@@ -1,0 +1,65 @@
+@import '../../style/variables';
+
+.filter-container {
+    width: 100%;
+    margin-top: 5px;
+
+    .toggle-button {
+        border: 0;
+        float: right;
+        margin: 5px 10px;
+        padding: 7px 15px;
+        background-color: transparent;
+        color: $text-secondary;
+        border-radius: 15px;
+        transition: background .3s;
+
+        &.opened {
+            background-color: $light-background;
+        }
+
+        &:hover {
+            background-color: $light-gray;
+        }
+    }
+
+    .filters {
+        margin: 0 10px;
+        padding: 15px;
+        display: flex;
+    }
+
+    .select-container {
+        width: 25%;
+        padding-left: 20px;
+        box-sizing: border-box;
+
+        &:first-child {
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .filter-container{
+        position: relative;
+
+        .filters {
+            margin: 10px 0;
+            padding: 0;
+            flex-direction: column;
+        }
+
+        .toggle-button {
+            position: absolute;
+            right: 0;
+            top: -40px;
+        }
+
+        .select-container {
+            width: 100%;
+            padding: 0;
+            margin: 10px 0;
+        }
+    }
+}

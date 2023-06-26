@@ -1,0 +1,18 @@
+@import '../../style/variables';
+
+.auth-container {
+    min-width: 300px;
+    max-width: calc(100% - 20px);
+    width: 35%;
+    background-color: $primary-background;
+    padding: 30px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.title {
+    font-weight: normal;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,85 @@
+button {
+    cursor: pointer;
+}
+
+.btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 0;
+    font-size: 16px;
+    transition: background .3s;
+    color: $text-primary;
+    text-decoration: none;
+}
+
+
+.primary-btn {
+    @extend .btn;
+    background-color: $primary;
+
+    &:hover {
+        background-color: lighten($primary, 15%);
+    }
+
+    &:disabled {
+        background-color: lighten($primary, 40%);
+    }
+}
+
+.secondary-btn {
+    @extend .btn;
+    background-color: $secondary;
+
+    &:hover {
+        background-color: lighten($secondary, 15%);
+    }
+}
+
+.danger-btn {
+    @extend .btn;
+    background-color: $danger;
+
+    &:hover {
+        background-color: lighten($danger, 15%);
+    }
+}
+
+.link-btn {
+    @extend .btn;
+    font-size: 15px;
+    background-color: transparent;
+    color: $link-color;
+    margin: 0 5px;
+    text-decoration: underline;
+
+    &:hover {
+        background-color: $light-gray;
+        text-decoration: none;
+    }
+
+    &.selected {
+        color: $primary;
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .link-btn {
+        padding: 5px 10px;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .primary-btn:hover {
+        background-color: $primary;
+    }
+
+    .secondary-btn:hover {
+        background-color: $secondary;
+    }
+
+    .danger-btn:hover {
+        background-color: $danger;
+    }
+}

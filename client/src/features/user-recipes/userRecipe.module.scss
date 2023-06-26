@@ -1,0 +1,159 @@
+@import '../../style/variables';
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &>div {
+        width: 30%;
+        display: flex;
+        align-items: center;
+
+        &:nth-child(2) {
+            justify-content: center;
+        }
+
+        &:last-child {
+            justify-content: flex-end;
+        }
+    }
+
+    .link {
+        a {
+            color: $link-color;
+        }
+    }
+}
+
+.canceled {
+    color: $text-secondary;
+
+    a {
+        color: $text-secondary;
+        text-decoration: none;
+        pointer-events: none;
+    }
+}
+
+.recipe-container {
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+
+        p {
+            font-weight: 600;
+        }
+    }
+
+    .dates {
+        text-align: right;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: $breakpoint-sm) {
+    .recipe-container {
+        flex-direction: column;
+
+        .recipe-details-container {
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .recipe-title {
+            &.small-title {
+                display: block;
+            }
+
+            &.large-title {
+                display: none;
+            }
+        }
+
+        &.admin-recipe-container {
+            .recipe-body-container {
+                flex-direction: column;
+            }
+
+            .action-container {
+                flex-direction: row;
+                margin-top: 10px;
+
+                button {
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+}
+
+
+.category-row {
+    display: flex;
+    justify-content: center;
+}
+
+.category-range-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-right: 30px;
+
+}
+
+.category {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
+
+  }
+  .rating {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
+
+  }
+  .rating-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-label {
+  margin-right: 10px;
+}
+.category-label {
+    margin-right: 10px;
+  }
+
+.primary-btn{
+    position: relative;
+    margin-left: 300px; 
+    
+}

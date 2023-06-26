@@ -1,0 +1,73 @@
+@import './style/variables';
+@import './style//form';
+@import './style//buttons';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: $light-background;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('../images/fundal2.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    background-image: rgba(255, 255, 255, 20);
+}
+
+$width: 75%;
+
+.list-item-container {
+    width: $width;
+    max-width: 1200px;
+    margin-top: 4em;
+    padding: 30px;
+    border-radius: 4px;
+    background-color: $primary-background;
+    box-sizing: border-box;
+}
+
+.category-container {
+    width: $width;
+    max-width: 1200px;
+    margin-top: 50px;
+
+    .title-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+
+        .title {
+            color: white;
+            margin: 0;
+        }
+    }
+
+    .list-item-container {
+        width: 100%;
+        margin-top: 20px;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .list-item-container, .category-container {
+        width: calc(100% - 40px);
+    }
+
+    .list-item-container {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .list-item-container, .category-container {
+        width: calc(100% - 20px);
+    }
+}

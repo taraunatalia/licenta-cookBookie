@@ -1,0 +1,113 @@
+@import "../../../style/variables";
+
+.navbar {
+    background-color: $primary-background;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: $navHeight;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9;
+    border-bottom: 1px solid rgba(0,0,0, .1);
+}
+
+.menu-button-container, .menu {
+    display: none;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 24px;
+
+    a {
+        text-decoration: none;
+        color: $primary;
+    }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .menu-button-container {
+        display: block;
+    }
+
+    .menu-button {
+        margin-left: 10px;
+        background-color: transparent;
+        border: 0;
+        width: 20px;
+        height: 13px;
+        position: relative;
+        padding: 0;
+        z-index: 1;
+
+        .line {
+            height: 2px;
+            width: 100%;
+            background-color: $text-secondary;
+            position: absolute;
+            transition: top .5s, transform .5s, bottom .5s;
+            transform: none;
+        }
+
+        .line-top {
+            top: 0;
+        }
+
+        .line-bottom {
+            bottom: 0;
+        }
+
+        &.close {
+            .line-top {
+            top: 5.5px;
+            transform: rotate(45deg);
+            }
+
+            .line-bottom {
+            bottom: 5.5px;
+            transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: $navHeight;
+        background-color: $primary-background;
+        border-bottom: 1px solid rgba(0,0,0, .1);
+        transition: opacity .5s, visibility .5s;
+        opacity: 1;
+        visibility: visible;
+
+        a {
+            font-size: 18px;
+            text-decoration: none;
+            margin: 5px 0;
+            border-radius: 0;
+        }
+
+        &.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import '../../../style/variables';
+
+.pageContainer {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: $navHeight;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+
+    &.fullHeight {
+        height: calc(100% - #{$navHeight});
+        padding-bottom: 0;
+    }
+}

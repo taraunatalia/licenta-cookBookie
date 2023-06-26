@@ -1,0 +1,23 @@
+@import '../../style/variables';
+
+.rating-container {
+    display: flex;
+
+    .star {
+        font-size: 20px;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        color: $text-secondary;
+
+        &.active {
+            color: $rating-color;
+        }
+    }
+
+    .label {
+        margin: 0;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+}

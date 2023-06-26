@@ -1,0 +1,70 @@
+@import '../../../style/variables';
+
+.dialog-container {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0,0,0, .7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.dialog {
+    background-color: $primary-background;
+    padding: 20px 30px;
+    border-radius: 4px;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: background .3s;
+    padding: 5px;
+
+    &:hover {
+        background-color: $light-gray;
+        border-radius: 4px;
+    }
+
+    button {
+        border: 0;
+        background-color: transparent;
+        font-size: 16px;
+    }
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.actions {
+    width: calc(100% + 20px);
+    margin: 0 -10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+
+    .secondary-container {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .dialog {
+        width: calc(100% - 20px);
+        box-sizing: border-box;
+    }
+}
